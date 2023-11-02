@@ -9,6 +9,17 @@ int getSum(std::vector<int> &elements)
     return sum;
 }
 
+int getMin(std::vector<int> &elements)
+{
+    int minElement = 1e9;
+    for (auto element : elements)
+    {
+        if (element < minElement)
+            minElement = element;
+    }
+    return minElement;
+}
+
 int main()
 {
     std::vector<int> elements;
@@ -16,5 +27,7 @@ int main()
         elements.push_back(i);
     int ans = getSum(elements);
     std::cout << ans << "\n";
+    int minElement = getMin(elements);
+    std::cout << minElement << "\n";
     return 0;
 }
