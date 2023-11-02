@@ -9,6 +9,14 @@ int getSum(std::vector<int> &elements)
     return sum;
 }
 
+float getAverage(std::vector<int> &elements)
+{
+    float totalSum = 0, numberOfElements = elements.size();
+    for (auto element : elements)
+        totalSum += element;
+    return totalSum / numberOfElements;
+}
+
 int main()
 {
     std::vector<int> elements;
@@ -16,5 +24,7 @@ int main()
         elements.push_back(i);
     int ans = getSum(elements);
     std::cout << ans << "\n";
+    float avg = getAverage(elements);
+    std::cout << avg << "\n";
     return 0;
 }
