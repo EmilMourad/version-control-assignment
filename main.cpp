@@ -16,6 +16,16 @@ float getAverage(std::vector<int> &elements)
         totalSum += element;
     return totalSum / numberOfElements;
 }
+int getMin(std::vector<int> &elements)
+{
+    int minElement = 1e9;
+    for (auto element : elements)
+    {
+        if (element < minElement)
+            minElement = element;
+    }
+    return minElement;
+}
 
 int main()
 {
@@ -26,5 +36,7 @@ int main()
     std::cout << ans << "\n";
     float avg = getAverage(elements);
     std::cout << avg << "\n";
+    int minElement = getMin(elements);
+    std::cout << minElement << "\n";
     return 0;
 }
